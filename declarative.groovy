@@ -10,6 +10,10 @@ pipeline {
     label "terraform"
   }
 
+  environment {
+    sample = "google.com"
+  }
+
   stages {
     stage("one") {
       steps {
