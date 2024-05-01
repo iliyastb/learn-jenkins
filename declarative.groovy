@@ -14,6 +14,10 @@ pipeline {
     SSH = credentials("ssh")
   }
 
+  parameters {
+    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+  }
+
   stages {
     stage("one") {
       steps {
