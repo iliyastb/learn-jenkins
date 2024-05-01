@@ -18,6 +18,7 @@ pipeline {
     stage("one") {
       steps {
         echo "one"
+        ssh 'env'
       }
     }
 
