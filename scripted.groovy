@@ -2,7 +2,7 @@ node("workstation") {
 
   properties([
     parameters([
-      booleanParam(name: 'DEPLOY_SHA', defaultValue: false),
+      booleanParam(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?'),
     ])
   ])
 
