@@ -1,10 +1,12 @@
 node("workstation") {
 
-  properties([
-    paramerters([
-      string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Environment')
-    ])
-  ])
+  properties(
+          [
+                  parameters([
+                          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?'),
+                  ])
+          ]
+  )
 
   env.SAMPLE_URL = "google.com"
   try {
