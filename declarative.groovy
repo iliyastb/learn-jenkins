@@ -1,7 +1,6 @@
 pipeline {
 //  agent any
 
-//  Node name agent
 //  agent {
 //    node { label "workstation" }
 //  }
@@ -10,12 +9,8 @@ pipeline {
     label "terraform"
   }
 
-//  environment {
-//    SAMPLE = "google.com"
-//  }
-
   environment {
-    AN_ACCESS_KEY = 'my-predefined-secret-text'
+    SAMPLE = "google.com"
   }
 
   stages {
