@@ -1,4 +1,11 @@
 node("workstation") {
+
+  properties([
+    paramerters([
+      string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Environment')
+    ])
+  ])
+
   env.SAMPLE_URL = "google.com"
   try {
     withCredentials([usernameColonPassword(credentialsId: "ssh", variable: "USERPASS")]) {
