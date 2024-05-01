@@ -10,9 +10,9 @@ pipeline {
     label "terraform"
   }
 
-  environment {
-    SAMPLE = "google.com"
-  }
+//  environment {
+//    SAMPLE = "google.com"
+//  }
 
   environment {
     AN_ACCESS_KEY = 'my-predefined-secret-text'
