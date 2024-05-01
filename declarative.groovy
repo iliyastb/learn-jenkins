@@ -11,6 +11,7 @@ pipeline {
 
   environment {
     SAMPLE = "google.com"
+    SSH = credentials('ssh')
   }
 
   stages {
