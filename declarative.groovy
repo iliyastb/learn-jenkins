@@ -11,14 +11,14 @@ pipeline {
 
   environment {
     SAMPLE = "google.com"
-    SSH = credentials('ssh')
+    SSH = credentials("ssh")
   }
 
   stages {
     stage("one") {
       steps {
         echo "one"
-        ssh 'env'
+        sh "env"
       }
     }
 
