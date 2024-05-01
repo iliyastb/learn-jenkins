@@ -1,8 +1,12 @@
 node("workstation") {
+  env.SAMPLE_URL = "google.com"
   try {
-    stage("one") {
-      echo "one"
-      sh "exit 1"
+    withcredentials([usernamecolonpassword(credentialsId: "ssh", variable: "USERPASS")]) {
+      stage("one") {
+        echo "one"
+        sh "env"
+        sh "env >/tmp/env"
+      }
     }
 
     stage("two") {

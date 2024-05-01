@@ -10,7 +10,7 @@ pipeline {
   }
 
   environment {
-    SAMPLE = "google.com"
+    SAMPLE_URL = "google.com"
     SSH = credentials("ssh")
   }
 
