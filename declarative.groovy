@@ -11,7 +11,7 @@ pipeline {
   }
 
   environment {
-    sample = "google.com"
+    SAMPLE = "google.com"
   }
 
   stages {
