@@ -1,12 +1,10 @@
 node("workstation") {
 
-  properties(
-          [
-                  parameters([
-                          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?'),
-                  ])
-          ]
-  )
+  properties([
+    parameters([
+      booleanParam(name: 'DEPLOY_SHA', defaultValue: false),
+    ])
+  ])
 
   env.SAMPLE_URL = "google.com"
   try {
