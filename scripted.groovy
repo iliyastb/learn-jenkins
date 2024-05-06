@@ -6,6 +6,10 @@ node("workstation") {
     ])
   ])
 
+  stage('Deploy') {
+    input(id: 'deploy_approval', message: 'Approve deployment?', ok: 'Deploy', reject: 'Cancel')
+  }
+
   env.SAMPLE_URL = "google.com"
   try {
     withCredentials([usernameColonPassword(credentialsId: "ssh", variable: "USERPASS")]) {
