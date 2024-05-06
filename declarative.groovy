@@ -27,7 +27,9 @@ pipeline {
     }
 
     stage("two") {
-      when { expression {environment name: 'PERSON', value: 'ILIYAS'}}
+      when {
+        environment name: 'PERSON', value: 'ILIYAS'
+      }
       input {
         message "Should we continue?"
         ok "Yes, we should."
