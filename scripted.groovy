@@ -24,7 +24,7 @@ node("workstation") {
       echo "two"
     }
   } catch (e) {
-    stage ("Declarative: post actions") {
+    stage("Declarative: post actions") {
       echo "This will run only if failed"
     }
   }
