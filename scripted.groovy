@@ -6,11 +6,8 @@ node("workstation") {
     ])
   ])
 
-  stage('Deploy') {
-    input(id: 'deploy_approval', message: 'Approve deployment?', ok: 'Deploy', reject: 'Cancel')
-  }
-
   env.SAMPLE_URL = "google.com"
+
   try {
     withCredentials([usernameColonPassword(credentialsId: "ssh", variable: "USERPASS")]) {
       stage("one") {
@@ -20,10 +17,19 @@ node("workstation") {
       }
     }
 
-    stage("two") {
-      echo "two"
-      sh 'exit 1'
+    if ( PERSON == "ILIYAS") {
+      stage("two") {
+        echo "two"
+        sh 'exit 1'
+      }
     }
+
+    stage("three") {
+      stage('Deploy') {
+        input(id: 'deploy_approval', message: 'Approve deployment?', ok: 'Deploy', reject: 'Cancel')
+      }
+    }
+
   } catch (e) {
     stage("Declarative: post actions") {
       echo "This will run only if failed"
