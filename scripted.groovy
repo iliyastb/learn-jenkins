@@ -22,7 +22,7 @@ node("workstation") {
 
     stage("two") {
       echo "two"
-      exit 1
+      sh 'exit 1'
     }
   } catch (e) {
     stage("Declarative: post actions") {
