@@ -20,7 +20,6 @@ node("workstation") {
     if ( PERSON == "ILIYAS") {
       stage("two") {
         echo "two"
-        sh 'exit 1'
       }
     }
 
@@ -28,6 +27,11 @@ node("workstation") {
       stage('Deploy') {
         input(id: 'deploy_approval', message: 'Approve deployment?', ok: 'Deploy', reject: 'Cancel')
       }
+    }
+
+    stage("four") {
+      echo "four"
+      sh 'exit 1'
     }
 
   } catch (e) {
