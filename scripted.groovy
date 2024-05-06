@@ -10,7 +10,7 @@ node("workstation") {
 
   try {
     withCredentials([usernameColonPassword(credentialsId: "ssh", variable: "USERPASS")]) {
-      stage("one") {
+      stage("env") {
         echo "one"
         sh "env"
         sh "env >/tmp/env"
@@ -18,19 +18,17 @@ node("workstation") {
     }
 
     if ( PERSON == "ILIYAS") {
-      stage("two") {
-        echo "two"
+      stage("condition") {
+        echo "one"
       }
     }
 
-    stage("three") {
-      stage('Deploy') {
-        input(id: 'deploy_approval', message: 'Approve deployment?', ok: 'Deploy', reject: 'Cancel')
-      }
+    stage("input") {
+      input(id: 'deploy_approval', message: 'Approve deployment?', ok: 'Deploy', reject: 'Cancel')
     }
 
-    stage("four") {
-      echo "four"
+    stage("failure") {
+      echo "one"
       sh 'exit 1'
     }
 
